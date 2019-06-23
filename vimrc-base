@@ -33,7 +33,7 @@ set formatoptions=tc
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " spell
-au BufRead,BufNewFile *.tex set spell spelllang=en_us
+au FileType tex,text,gitcommit,markdown set spell spelllang=en_us
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " tabs
