@@ -33,8 +33,7 @@ set formatoptions=tc
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " spell
-set spell
-set spelllang=en_us
+au BufRead,BufNewFile *.tex set spell spelllang=en_us
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " tabs
@@ -67,3 +66,4 @@ let g:netrw_list_hide= '\(^\|\s\s\)\zs\.\S\+'
 if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
+
