@@ -26,12 +26,25 @@ let g:vimtex_compiler_latexmk = { 'backend' : 'jobs',
                               \     '-interaction=nonstopmode',
                               \   ],
                               \  }
-
-au BufRead,BufNewFile *.tikz set filetype=tex
-
 augroup vimtex
+    fu! s:OpenToc()
+        if filereadable(expand('%'))
+            :VimtexTocOpen
+        endif
+    endfu
+
+    fu! s:TocClose()
+        if filereadable(expand('%'))
+            call s:OpenToc()
+            :VimtexTocToggle
+        endif
+    endfu
+
     autocmd!
+    autocmd BufRead,BufNewFile *.tikz set filetype=tex
     autocmd BufWritePost *.tex call vimtex#toc#refresh()
+    autocmd BufWinEnter *.tex call s:OpenToc()
+    autocmd BufWinLeave *.tex call s:TocClose()
 augroup END
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
