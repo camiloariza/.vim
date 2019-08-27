@@ -4,14 +4,41 @@ source ~/.vim/vimrc-base
 call plug#begin('~/.vim/plugged')
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" depends on ctags
+Plug 'ludovicchabant/vim-gutentags'
+let g:gutentags_cache_dir = '~/.cache/gutentags'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Plug 'tpope/vim-fugitive'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Plug 'itchyny/lightline.vim'
+
+" add branch name to statusline (depends on vim-fugitive)
+let g:lightline = { 'colorscheme': 'wombat',
+                \   'active': {
+                \     'left': [
+                \       ['mode', 'paste' ],
+                \       ['gitbranch', 'readonly', 'filename', 'modified']
+                \     ]
+                \   },
+                \   'component_function': {
+                \     'gitbranch': 'fugitive#head'
+                \   },
+                \ }
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'lervag/vimtex'
 let g:vimtex_view_method = 'mupdf'
-let g:vimtex_view_mupdf_send_keys = 'i'
+let g:vimtex_view_mupdf_send_keys = 'I'
 let g:vimtex_format_enabled = 1
+let g:vimtex_fold_enabled = 1
+let g:vimtex_fold_manual = 1
 let g:vimtex_toc_config = { 'mode' : 1,
-			\   'refresh_always' : 0,
-			\   'split_pos' : 'vert belowright',
-			\   'show_help' : 0,
+                        \   'refresh_always' : 0,
+                        \   'split_pos' : 'vert belowright',
+                        \   'show_help' : 0,
+                        \   'tocdepth': 1,
                         \ }
 let g:vimtex_compiler_latexmk = { 'backend' : 'jobs',
                               \   'background' : 1,
@@ -26,33 +53,21 @@ let g:vimtex_compiler_latexmk = { 'backend' : 'jobs',
                               \     '-interaction=nonstopmode',
                               \   ],
                               \  }
+
 augroup vimtex
-    fu! s:OpenToc()
-        if filereadable(expand('%'))
-            :VimtexTocOpen
-        endif
+    " fecth bibtex from doi.org
+    fu! s:getbib(doi)
+        execute 'read ! curl -s --location'
+                    \ '--header "Accept: application/x-bibtex" '
+                    \ 'http://www.doi.org/' . a:doi
     endfu
 
-    fu! s:TocClose()
-        if filereadable(expand('%'))
-            call s:OpenToc()
-            :VimtexTocToggle
-        endif
-    endfu
-
-    autocmd!
-    autocmd BufRead,BufNewFile *.tikz set filetype=tex
-    autocmd BufWritePost *.tex call vimtex#toc#refresh()
-    autocmd BufWinEnter *.tex call s:OpenToc()
-    autocmd BufWinLeave *.tex call s:TocClose()
+    command! -nargs=* -bar -bang -complete=customlist,s:names GetBib
+                \ call s:getbib(<f-args>)
 augroup END
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'vim-syntastic/syntastic'
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
@@ -74,7 +89,6 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsEditSplit="vertical"
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Plug 'airblade/vim-gitgutter'
 Plug 'mhinz/vim-signify'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -83,5 +97,3 @@ call plug#end()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " options
 colorscheme afterglow
-set cursorline
-

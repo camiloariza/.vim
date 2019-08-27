@@ -7,7 +7,7 @@ syntax on
 if has("gui_running")
     set guioptions=i
     colorscheme desert
-    set cursorline
+    set guifont=DejaVu\ Sans\ Mono\ 12
 else
     colorscheme delek
 endif
@@ -24,7 +24,8 @@ set wildmenu
 set smartindent
 set nowrap
 set ttymouse=sgr
-set tabstop=4
+set laststatus=2
+set showcmd
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " textwidth
@@ -38,9 +39,10 @@ au FileType tex,text,gitcommit,markdown set spell spelllang=en_us
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " tabs
-set expandtab
+set tabstop=4
 set shiftwidth=4
 set softtabstop=4
+set expandtab
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " trailing spaces
@@ -63,14 +65,11 @@ let g:netrw_winsize = 15
 let g:netrw_keepdir = 1
 let g:netrw_list_hide = netrw_gitignore#Hide() . ',\(^\|\s\s\)\zs\.\S\+'
 
-autocmd VimEnter * if !isdirectory(expand('%')) && winwidth('%') >= 110 |
-                   \ :Vexplore | let _idelike = 1 | wincmd p | endif
-autocmd WinEnter * if winnr('$') == 1 &&
-                   \ exists('_idelike') &&
-                   \ getbufvar(winbufnr(winnr()), "&filetype") == "netrw"
-                   \ | q | endif
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " jump to the last position when reopening a file
 autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" quickfix jump maps
+map [q :cp<CR>
+map ]q :cn<CR>
