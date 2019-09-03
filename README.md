@@ -8,6 +8,13 @@
 └── vimrc-plugins           # plugin configuration
 ```
 
+## installation
+
+```shell
+git clone https://github.com/camiloariza/.vim.git ~/.vim/
+vim
+```
+
 ## plugins
 
 plugin manager: [vim-plug](https://github.com/junegunn/vim-plug)
@@ -19,7 +26,7 @@ plugin manager: [vim-plug](https://github.com/junegunn/vim-plug)
 
 ### utils
 
-- [syntastic/syntastic](https://github.com/vim-syntastic/syntastic)
+- [syntastic](https://github.com/vim-syntastic/syntastic)
 - [vim-commentary](https://github.com/tpope/vim-commentary)
 - [ultisnips](https://github.com/SirVer/ultisnips)
 - [vim-snippets](https://github.com/honza/vim-snippets)
