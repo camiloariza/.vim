@@ -74,6 +74,8 @@ augroup vimtex
                 \ call s:getbib(<f-args>)
 augroup END
 
+autocmd BufReadPost *.tikz set ft=tex
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'vim-syntastic/syntastic'
 let g:syntastic_always_populate_loc_list = 1
