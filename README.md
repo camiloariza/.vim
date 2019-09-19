@@ -11,8 +11,7 @@
 ## installation
 
 ```shell
-git clone https://github.com/camiloariza/.vim.git ~/.vim/
-vim
+git clone https://github.com/camiloariza/.vim.git ~/.vim/ && vim
 ```
 
 ## plugins
