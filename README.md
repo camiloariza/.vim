@@ -22,6 +22,7 @@ plugin manager: [vim-plug](https://github.com/junegunn/vim-plug)
 
 - [lightline.vim](https://github.com/itchyny/lightline.vim)
 - [vim-colorschemes](https://github.com/flazz/vim-colorschemes)
+- [indentLine](https://github.com/Yggdroot/indentLine)
 
 ### utils
 
@@ -29,7 +30,6 @@ plugin manager: [vim-plug](https://github.com/junegunn/vim-plug)
 - [nerdcommenter](https://github.com/scrooloose/nerdcommenter)
 - [ultisnips](https://github.com/SirVer/ultisnips)
 - [vim-snippets](https://github.com/honza/vim-snippets)
-- [indentLine](https://github.com/Yggdroot/indentLine)
 
 ### git
 
