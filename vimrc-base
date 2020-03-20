@@ -31,7 +31,8 @@ set showcmd
 " textwidth
 set colorcolumn=80
 set textwidth=80
-set formatoptions=tc
+set formatoptions=
+au FileType tex,text,gitcommit,markdown set formatoptions=tc
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " spell
