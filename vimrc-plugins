@@ -33,9 +33,7 @@ let g:lightline = { 'colorscheme': 'wombat',
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'lervag/vimtex'
 let g:vimtex_view_method = 'mupdf'
-let g:vimtex_view_mupdf_send_keys = 'I'
 let g:vimtex_format_enabled = 1
-let g:vimtex_fold_enabled = 1
 let g:vimtex_fold_manual = 1
 let g:vimtex_toc_config = { 'mode' : 1,
                         \   'refresh_always' : 0,
