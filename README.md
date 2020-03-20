@@ -26,7 +26,7 @@ plugin manager: [vim-plug](https://github.com/junegunn/vim-plug)
 ### utils
 
 - [syntastic](https://github.com/vim-syntastic/syntastic)
-- [vim-commentary](https://github.com/tpope/vim-commentary)
+- [nerdcommenter](https://github.com/scrooloose/nerdcommenter)
 - [ultisnips](https://github.com/SirVer/ultisnips)
 - [vim-snippets](https://github.com/honza/vim-snippets)
 

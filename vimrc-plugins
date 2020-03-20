@@ -82,7 +82,19 @@ let g:syntastic_check_on_wq = 0
 Plug 'flazz/vim-colorschemes'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plug 'tpope/vim-commentary'
+Plug 'scrooloose/nerdcommenter'
+let g:NERDSpaceDelims = 1
+let g:NERDCompactSexyComs = 1
+let g:NERDDefaultAlign = 'left'
+let g:NERDCommentEmptyLines = 1
+let g:NERDTrimTrailingWhitespace = 1
+let g:NERDToggleCheckAllLines = 1
+map <C-_> <plug>NERDCommenterToggle
+vmap <C-_> <plug>NERDCommenterToggle gv
+let g:NERDCustomDelimiters = {
+    \ 'python': { 'left': '#', 'leftAlt': '#' },
+\ }
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'SirVer/ultisnips'
