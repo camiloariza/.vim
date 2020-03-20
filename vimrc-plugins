@@ -12,11 +12,6 @@ endif
 call plug#begin('~/.vim/plugged')
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" depends on ctags
-Plug 'ludovicchabant/vim-gutentags'
-let g:gutentags_cache_dir = '~/.cache/gutentags'
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'tpope/vim-fugitive'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
