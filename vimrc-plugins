@@ -109,6 +109,12 @@ let g:UltiSnipsEditSplit="vertical"
 Plug 'mhinz/vim-signify'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Plug 'Yggdroot/indentLine'
+let g:indentLine_char = '┆'
+let g:indentLine_concealcursor = 'nc'
+let g:indentLine_conceallevel = 2
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#end()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
