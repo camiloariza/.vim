@@ -36,7 +36,7 @@ plugin manager: [vim-plug](https://github.com/junegunn/vim-plug)
 - [vim-fugitive](https://github.com/tpope/vim-fugitive)
 - [vim-signify](https://github.com/mhinz/vim-signify)
 
+### dev
 
-### latex
-
-- [vimtex](https://github.com/lervag/vimtex)
+- latex: [vimtex](https://github.com/lervag/vimtex)
+- file templates: [vim-jaskeleton](https://github.com/camiloariza/vim-jaskeleton)

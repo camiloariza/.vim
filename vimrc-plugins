@@ -113,6 +113,11 @@ let g:indentLine_concealcursor = 'nc'
 let g:indentLine_conceallevel = 2
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Plug 'camiloariza/vim-jaskeleton'
+let g:jaskeleton_user = 'camilo ariza'
+let g:jaskeleton_email = 'camilo.ariza@protonmail.com'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#end()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
